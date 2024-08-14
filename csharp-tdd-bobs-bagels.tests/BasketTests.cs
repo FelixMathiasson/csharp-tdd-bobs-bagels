@@ -25,10 +25,20 @@ public class BasketTests
 
 
 
-    //[TestCase("Vanilla")]
-    //public void TestRemovingBagle(string name)
-    //{
-    //    Basket basket = new Basket();
+    [TestCase("Vanilla")]
+    public void TestRemovingBagle(string name)
+    {
+        Basket basket = new Basket();
 
-    //}
+        //adding two bagels so code can test to remove 
+        //existent and non-existent bagels
+        basket.AddBagel("Plain");
+        basket.AddBagel("Banana");
+
+        bool expected = basket.DoesBagelExist(name); 
+
+        bool result = basket.RemoveBagel(name);
+
+        Assert.That(expected == result);
+    }
 }
