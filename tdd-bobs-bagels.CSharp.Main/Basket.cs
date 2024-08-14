@@ -9,7 +9,7 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         private List<string> orderedBagels = new List<string>();
-        private int basketSize = 5; // 5 just as a starting 
+        private int basketSize = 5; // 5 just as a starting size 
 
         public bool AddBagel(string name)
         {

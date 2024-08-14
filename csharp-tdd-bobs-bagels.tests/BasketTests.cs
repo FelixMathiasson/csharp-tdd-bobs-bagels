@@ -47,4 +47,23 @@ public class BasketTests
 
         Assert.That(expected == result);
     }
+
+
+
+    [TestCase(5)]
+    public void TestChangingBasketSize(int size)
+    {
+        Basket basket = new Basket();
+
+        //adding two bagels so code can test to change
+        //basket size below the bagelamount
+        basket.AddBagel("Plain");
+        basket.AddBagel("Banana");
+
+        bool expected = basket.CanSizeBeChanged(size);
+
+        bool result = basket.ChangeBasketSize(size);
+
+        Assert.That(expected == result);
+    }
 }
