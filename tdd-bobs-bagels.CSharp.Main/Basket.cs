@@ -22,6 +22,26 @@ namespace tdd_bobs_bagels.CSharp.Main
             return false;
         }
 
+        public bool CanSizeBeChanged(int newSize)
+        {
+            if(newSize >= orderedBagels.Count && newSize >= 0) // current bagels still fit and we cannot have negative space
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool ChangeBasketSize(int newSize)
+        {
+            if (newSize >= orderedBagels.Count && newSize >= 0) // current bagels still fit and we cannot have negative space
+            {
+                basketSize = newSize;
+                return true;
+            }
+            Console.WriteLine("New size is either too small for the current amount of bagels or it's a negative number!");
+            return false;
+        }
+
         public bool DoesBagelExist(string name)
         {
             if(orderedBagels.Contains(name))

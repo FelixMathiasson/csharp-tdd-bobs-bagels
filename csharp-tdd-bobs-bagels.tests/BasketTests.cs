@@ -50,8 +50,16 @@ public class BasketTests
 
 
 
+    [TestCase(2)]
     [TestCase(5)]
-    public void TestChangingBasketSize(int size)
+    [TestCase(8)]
+    [TestCase(9)]
+    [TestCase(-4)]
+    [TestCase(1)]
+    [TestCase(3)]
+    [TestCase(-5)]
+    [TestCase(0)]
+    public void TestChangingBasketSize(int newSize)
     {
         Basket basket = new Basket();
 
@@ -60,9 +68,9 @@ public class BasketTests
         basket.AddBagel("Plain");
         basket.AddBagel("Banana");
 
-        bool expected = basket.CanSizeBeChanged(size);
+        bool expected = basket.CanSizeBeChanged(newSize);
 
-        bool result = basket.ChangeBasketSize(size);
+        bool result = basket.ChangeBasketSize(newSize);
 
         Assert.That(expected == result);
     }
