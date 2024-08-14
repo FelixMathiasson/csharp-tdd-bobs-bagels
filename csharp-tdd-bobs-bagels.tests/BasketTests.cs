@@ -26,6 +26,12 @@ public class BasketTests
 
 
     [TestCase("Vanilla")]
+    [TestCase("Chocolate")]
+    [TestCase("Tarzan")]
+    [TestCase("Banana")]
+    [TestCase("Vanilla")]
+    [TestCase("Plain")]
+    [TestCase("Banana")]
     public void TestRemovingBagle(string name)
     {
         Basket basket = new Basket();

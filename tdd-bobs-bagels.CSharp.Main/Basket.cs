@@ -22,12 +22,32 @@ namespace tdd_bobs_bagels.CSharp.Main
             return false;
         }
 
+        public bool DoesBagelExist(string name)
+        {
+            if(orderedBagels.Contains(name))
+            {
+                return true; //bagel exists
+            }
+            return false; // bagel does not exist
+        }
+
         public bool IsBasketFull()
         {
             if(orderedBagels.Count < basketSize) //basket not full
             {
                 return true;
             }
+            return false;
+        }
+
+        public bool RemoveBagel(string name)
+        {
+            if (orderedBagels.Contains(name)) // if bagel exists
+            {
+                orderedBagels.Remove(name);
+                return true;
+            }
+            Console.WriteLine("Could not remove bagel from basket! 404 bagel not found!");
             return false;
         }
     }
